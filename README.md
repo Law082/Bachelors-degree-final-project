@@ -12,7 +12,7 @@ A mobile robotic system capable of detecting and sorting recyclable waste using 
 
 ## Camera Calibration
 
-![Camera Calibration](images/calibration.png)
+![Camera Calibration](images/calibration2.png)
 
 ## MATLAB Simulation
 
