@@ -29,7 +29,9 @@ This project proposes the development of a robotic arm mounted on a mobile chass
 - Hardware: Canyon USB web camera.
 - Hardware: Tank-type chassis with 2 DC motors and an L9110 driver.
 - Hardware: Robotic arm equipped with 6 MG996R servomotors.   
-
+<p align="center">
+  <img src="images/annotation.png" />
+</p>
 <p align="center">
   <img src="images/componente.png" />
 </p>
