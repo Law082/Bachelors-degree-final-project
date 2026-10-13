@@ -92,7 +92,7 @@ The target height of 220 mm approximates the height of a 0.5-liter bottle.
 
 An iterative Jacobian-based method updates the joint configuration according to the positional error between the desired point and the current end-effector position.
 
-![MATLAB Simulation](images/matlab_simulation.png)
+![Sequence 1](images/geometrieinversasimulare.gif)
 
 ## Technologies
 - Raspberry Pi 5
