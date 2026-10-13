@@ -72,7 +72,7 @@ Camera calibration was performed using the Zhang calibration method to determine
 
 The intrinsic matrix contains the focal lengths along the X and Y image axes, the principal point coordinates, and the skew factor.
 
-![Camera Calibration](images/calibration2.png)
+![Camera Calibration](images/cali.png)
 
 ## MATLAB Simulation
 
