@@ -48,7 +48,7 @@ The dataset was manually annotated, and the training process was evaluated at 20
 
 Approximately 130 images were used for each material category during dataset preparation and model training.
 
-![Results](images/resultate.png)
+![Results](images/resultate2.png)
 
 ## ArUco Marker Detection & Camera Calibration
 
