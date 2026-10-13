@@ -43,14 +43,21 @@ The architecture centers around a Raspberry Pi 5 acting as the central processin
 ## Results
 
 - The YOLOv8n model was trained for 100 epochs using a dataset of approximately 130 manually labeled images per material, demonstrating successful loss reduction and high precision metrics.
+
 <p align="center">
   <img src="images/100epoci.png" />
 </p>
+
 - Camera calibration was successfully achieved using the Zhang method, enabling accurate ArUco pose estimation with defined translation and rotation vectors.
 <p align="center">
   <img src="images/cali2.png" />
 </p>
+<p align="center">
+  <img src="images/zhang2.png" />
+</p>
+
 - Inverse geometry was successfully simulated in MATLAB to iteratively calculate the angular positions of the joints required to reach a specific target point, such as the 220mm height of a standard 0.5L bottle.
+
 <p align="center">
   <img src="images/matlab.png" />
 </p>
