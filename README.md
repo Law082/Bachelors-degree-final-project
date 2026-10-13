@@ -1,3 +1,5 @@
+# Robotic Arm for Recyclable Waste Sorting
+
 ## Overview
 
 This repository contains a robotics project focused on the development of an autonomous waste-sorting system. The system combines a mobile tracked chassis, a robotic arm, computer vision, and robotic kinematics to detect and sort recyclable waste according to material type.
@@ -8,17 +10,17 @@ The project integrates YOLOv8n for object detection, ArUco markers for camera-ba
 
 ## Components
 
-Mobile Platform: Tracked chassis equipped with two DC motors controlled through an L9110 motor driver.
+* **Mobile Platform** Tracked chassis equipped with two DC motors controlled through an L9110 motor driver.
 
-Robotic Arm: A serial manipulator with six MG996R servo motors, including the gripper mechanism.
+* **Robotic Arm:** A serial manipulator with six MG996R servo motors, including the gripper mechanism.
 
-Central Processing Unit: Raspberry Pi 5.
+* **Central Processing Unit:** Raspberry Pi 5.
 
-Servo Control: PCA9685 PWM driver board.
+* **Servo Control:** PCA9685 PWM driver board.
 
-Vision System: Canyon webcam used for object detection and marker-based positioning.
+* **Vision System:** Canyon webcam used for object detection and marker-based positioning.
 
-Power Supply: 5V, 20A
+* **Power Supply:** 5V, 20A
 
 ![Components](images/componente.png)
 
@@ -32,13 +34,13 @@ Degrees of Freedom (DoF): Five rotational joints are considered for the kinemati
 
 The system uses YOLOv8n to identify recyclable waste in camera images. The detection model was trained on a custom dataset containing images of four material categories:
 
-Class 0 — Cardboard
+* **Class 0** — Cardboard
 
-Class 1 — Glass
+* **Class 1** — Glass
 
-Class 2 — Plastic
+* **Class 2** — Plastic
 
-Class 3 — Aluminum
+* **Class 3** — Aluminum
 
 ![YOLO Detection](images/yolo_detection.png)
 
@@ -56,13 +58,13 @@ ArUco markers are used to estimate the position of a reference marker relative t
 
 The pose estimation provides:
 
-Rotation vector (rvec): Represents the marker's orientation relative to the camera.
+* **Rotation vector (rvec):** Represents the marker's orientation relative to the camera.
 
-Translation vector (tvec): Represents the marker's position relative to the camera.
+* **Translation vector (tvec):** Represents the marker's position relative to the camera.
 
-Camera matrix (cameraMatrix): Contains the intrinsic camera parameters.
+* **Camera matrix (cameraMatrix):** Contains the intrinsic camera parameters.
 
-Distortion coefficients (distCoeffs): Describe the camera's optical distortion.
+* **Distortion coefficients (distCoeffs):** Describe the camera's optical distortion.
 
 These parameters support camera-based positioning and provide geometric information that can be used by the robot's positioning system.
 
