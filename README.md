@@ -1,5 +1,3 @@
-<img width="957" height="476" alt="image" src="https://github.com/user-attachments/assets/420b47c0-1c59-4377-9948-ed61c6198ed6" /># Robotic Arm for Recyclable Waste Sorting
-
 ## Overview
 
 This repository contains a robotics project focused on the development of an autonomous waste-sorting system. The system combines a mobile tracked chassis, a robotic arm, computer vision, and robotic kinematics to detect and sort recyclable waste according to material type.
