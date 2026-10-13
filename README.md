@@ -66,4 +66,6 @@ The architecture centers around a Raspberry Pi 5 acting as the central processin
 
 For a detailed explanation of the design process, methodology, calculations, and results, see the project documentation and presentation below.
 
-[Presentation](videos/wealth-path-promo.mp4)
+[Presentation](Design%20of%20a%20mobile%20robot%20with%20a%20robotic%20arm%20for%20sorting%20recyclable%20waste%20using%20ArUco%20markers%20and%20YOLO/Presentation.pptx)
+
+[Documentation](Design%20of%20a%20mobile%20robot%20with%20a%20robotic%20arm%20for%20sorting%20recyclable%20waste%20using%20ArUco%20markers%20and%20YOLO/Proiect_Diploma_ghid_2024_RO%20-%20CONDREA%20LAURENȚIU.pdf)
