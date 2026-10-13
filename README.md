@@ -65,3 +65,5 @@ The architecture centers around a Raspberry Pi 5 acting as the central processin
 ## Documentation
 
 For a detailed explanation of the design process, methodology, calculations, and results, see the project documentation and presentation below.
+
+[Presentation](videos/wealth-path-promo.mp4)
