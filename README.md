@@ -26,8 +26,6 @@ The project integrates YOLOv8n for object detection, ArUco markers for camera-ba
 
 ## Architecture
 
-Degrees of Freedom (DoF): Five rotational joints are considered for the kinematic model, while the sixth servo operates the gripper separately.
-
 ![Architecture](images/architecture.png)
 
 ## Object Detection
