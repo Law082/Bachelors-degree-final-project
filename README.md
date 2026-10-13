@@ -1,95 +1,58 @@
-# Robotic Arm for Recyclable Waste Sorting
+# Robotic Arm for Sorting Recyclable Waste
 
 ## Overview
 
-This repository contains a robotics project focused on the development of an autonomous waste-sorting system. The system combines a mobile tracked chassis, a robotic arm, computer vision, and robotic kinematics to detect and sort recyclable waste according to material type.
+This project proposes the development of a robotic arm mounted on a mobile chassis. The system is capable of automatically detecting and sorting recyclable waste based on material type, specifically plastic, aluminum, glass, and cardboard. The main objectives are to automate the waste sorting process, increase recycling efficiency, reduce human involvement in potentially unhealthy environments, and contribute to a sustainable waste management system
 
-The main objective is to automate the identification and handling of recyclable objects, including plastic, glass, aluminum, and cardboard, using a Raspberry Pi 5 as the central processing unit.
+<p align="center">
+  <img src="images/geometrieinversasimulare.gif" alt="Sequence 1" />
+</p>
 
-The project integrates YOLOv8n for object detection, ArUco markers for camera-based positioning, and MATLAB simulations for analyzing the robotic arm's configuration, Jacobian, and inverse kinematics.
+## Features
 
-## Components
+- Automatic detection and sorting of recyclable materials like plastic, aluminum, glass, and cardboard.
+- Mobility provided by a tank-type chassis equipped with two DC motors.
+- Visual interface and material detection powered by a custom-trained YOLOv8 model.
+- Object position determination using ArUco marker detection, OpenCV, and Pose Estimation.
+- Inverse kinematics calculations using the Jacobian matrix to generate "pick and place" commands.
+- MATLAB simulation capabilities for testing the 5-joint robotic arm configuration and inverse geometry.
 
-* **Mobile Platform** Tracked chassis equipped with two DC motors controlled through an L9110 motor driver.
+## Technologies Used
 
-* **Robotic Arm:** A serial manipulator with six MG996R servo motors, including the gripper mechanism.
+- Software & Tools: YOLOv8.
+- Software & Tools: OpenCV.
+- Software & Tools: CVAT (for manual image labeling).
+- Software & Tools: MATLAB.
+- Hardware: Raspberry Pi 5 (Central Processing Unit).
+- Hardware: 5V 20A power supply.
+- Hardware: PCA9685 PWM development board.
+- Hardware: Canyon USB web camera.
+- Hardware: Tank-type chassis with 2 DC motors and an L9110 driver.
+- Hardware: Robotic arm equipped with 6 MG996R servomotors.   
 
-* **Central Processing Unit:** Raspberry Pi 5.
-
-* **Servo Control:** PCA9685 PWM driver board.
-
-* **Vision System:** Canyon webcam used for object detection and marker-based positioning.
-
-* **Power Supply:** 5V, 20A
-
-![Components](images/componente.png)
+<p align="center">
+  <img src="images/componente.png" />
+</p>
 
 ## Architecture
 
-![Architecture](images/architecture.png)
+The architecture centers around a Raspberry Pi 5 acting as the central processing unit. Visual input is captured via a USB camera and processed simultaneously by a YOLOv8 model for material recognition and an OpenCV module for ArUco pose estimation. These inputs determine the object's position, allowing the system to use the Jacobian matrix to generate exact "pick and place" commands. Finally, these commands are sent to a PCA9685 PWM board, which directly controls the robotic arm's servomotors and the chassis's DC motors.
 
-## Object Detection
+## Results
 
-The system uses YOLOv8n to identify recyclable waste in camera images. The detection model was trained on a custom dataset containing images of four material categories:
+- The YOLOv8n model was trained for 100 epochs using a dataset of approximately 130 manually labeled images per material, demonstrating successful loss reduction and high precision metrics.
+<p align="center">
+  <img src="images/100epoci.png" />
+</p>
+- Camera calibration was successfully achieved using the Zhang method, enabling accurate ArUco pose estimation with defined translation and rotation vectors.
+<p align="center">
+  <img src="images/cali2.png" />
+</p>
+- Inverse geometry was successfully simulated in MATLAB to iteratively calculate the angular positions of the joints required to reach a specific target point, such as the 220mm height of a standard 0.5L bottle.
+<p align="center">
+  <img src="images/matlab.png" />
+</p>
 
-* **Class 0** — Cardboard
+## Documentation
 
-* **Class 1** — Glass
-
-* **Class 2** — Plastic
-
-* **Class 3** — Aluminum
-
-![YOLO Detection](images/yolo_detection.png)
-
-The dataset was manually annotated, and the training process was evaluated at 20 and 100 epochs.
-
-![Annotation](images/annotation.png)
-
-Approximately 130 images were used for each material category during dataset preparation and model training.
-
-![Results](images/resultate2.png)
-
-## ArUco Marker Detection & Camera Calibration
-
-ArUco markers are used to estimate the position of a reference marker relative to the camera. The detected marker corners, camera calibration parameters, and marker dimensions are used to estimate its pose.
-
-The pose estimation provides:
-
-* **Rotation vector (rvec):** Represents the marker's orientation relative to the camera.
-
-* **Translation vector (tvec):** Represents the marker's position relative to the camera.
-
-* **Camera matrix (cameraMatrix):** Contains the intrinsic camera parameters.
-
-* **Distortion coefficients (distCoeffs):** Describe the camera's optical distortion.
-
-These parameters support camera-based positioning and provide geometric information that can be used by the robot's positioning system.
-
-Camera calibration was performed using the Zhang calibration method to determine the intrinsic parameters and optical distortion coefficients.
-
-![Zhang calibration](images/zhang.png)
-
-The intrinsic matrix contains the focal lengths along the X and Y image axes, the principal point coordinates, and the skew factor.
-
-![Camera Calibration](images/cali.png)
-
-## MATLAB Simulation
-
-The kinematic chain consists of five rotational joints with the following rotation sequence:
-
-Rz → Rx → Rx → Rx → Rz
-
-The gripper's opening and closing mechanism is handled separately and is not included in the five-joint kinematic model.
-
-Inverse kinematics is used to calculate the joint angles required to reach a desired end-effector position.
-
-The simulation uses the target position:
-
-P = [300, 0, 220] mm
-
-The target height of 220 mm approximates the height of a 0.5-liter bottle.
-
-An iterative Jacobian-based method updates the joint configuration according to the positional error between the desired point and the current end-effector position.
-
-![Sequence 1](images/geometrieinversasimulare.gif)
+For a detailed explanation of the design process, methodology, calculations, and results, see the project documentation and presentation below.
