@@ -68,4 +68,4 @@ For a detailed explanation of the design process, methodology, calculations, and
 
 [Presentation](Design%20of%20a%20mobile%20robot%20with%20a%20robotic%20arm%20for%20sorting%20recyclable%20waste%20using%20ArUco%20markers%20and%20YOLO/Presentation.pptx)
 
-[Documentation](Design%20of%20a%20mobile%20robot%20with%20a%20robotic%20arm%20for%20sorting%20recyclable%20waste%20using%20ArUco%20markers%20and%20YOLO/Proiect_Diploma_ghid_2024_RO%20-%20CONDREA%20LAURENȚIU.pdf)
+[Documentation](Design%20of%20a%20mobile%20robot%20with%20a%20robotic%20arm%20for%20sorting%20recyclable%20waste%20using%20ArUco%20markers%20and%20YOLO/Proiect_Diploma_2025-CONDREA-LAURENȚIU.pdf)
